@@ -44,6 +44,10 @@ cc_library {
             target_uses_fod_hack: {
                 cflags: ["-DTARGET_USES_FOD_HACK"],
             },
+            target_surfaceflinger_fod_lib: {
+                cflags: ["-DTARGET_PROVIDES_FOD_LIB"],
+                whole_static_libs: ["%s"],
+            },
         },
     },
     srcs: [
@@ -52,6 +56,7 @@ cc_library {
         "src/DisplayColorProfile.cpp",
         "src/DisplaySurface.cpp",
         "src/DumpHelpers.cpp",
+        "src/FodExtension.cpp",
         "src/HwcBufferCache.cpp",
         "src/Layer.cpp",
         "src/LayerCompositionState.cpp",
